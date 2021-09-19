@@ -7,6 +7,10 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
   "devDependencies": {
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
