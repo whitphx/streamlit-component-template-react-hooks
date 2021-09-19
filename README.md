@@ -8,7 +8,7 @@ This repo contains below.
 
 ## Quickstart for the component template
 
-* Ensure you have [Python 3.6+](https://www.python.org/downloads/), [Node.js](https://nodejs.org), and [yarn](https://yarnpkg.com/getting-started/install) (or [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)) installed.
+* Ensure you have [Python 3.6+](https://www.python.org/downloads/), [Node.js](https://nodejs.org), and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed.
 * Clone this repo.
 * Create a new Python virtual environment for the template:
 ```
@@ -20,8 +20,8 @@ $ pip install streamlit # install streamlit
 * Initialize and run the component template frontend:
 ```
 $ cd template/my_component/frontend
-$ yarn        # Install npm dependencies. `npm install` can be used instead.
-$ yarn start  # Start the Webpack dev server. `npm run start` can be used intead.
+$ npm install    # Install npm dependencies
+$ npm run start  # Start the Webpack dev server
 ```
 * From a separate terminal, run the template's Streamlit app:
 ```

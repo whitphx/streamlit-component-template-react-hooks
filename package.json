@@ -1,4 +1,7 @@
 {
   "private": true,
-  "workspaces": ["streamlit-component-lib-react-hooks", "template/my_component/frontend"]
+  "workspaces": [
+    "streamlit-component-lib-react-hooks",
+    "template/my_component/frontend"
+  ]
 }
