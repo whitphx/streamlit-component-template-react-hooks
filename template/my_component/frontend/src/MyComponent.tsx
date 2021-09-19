@@ -35,6 +35,7 @@ const MyComponent: React.VFC = () => {
     setIsFocused(false)
   }, [])
 
+  // Don't render until we've gotten our first data from Streamlit.
   if (renderData == null) {
     return null
   }
