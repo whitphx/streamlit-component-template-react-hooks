@@ -1,6 +1,6 @@
 {
   "name": "streamlit-component-lib-react-hooks",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "dist/index.js",
   "repository": "https://github.com/whitphx/streamlit-component-template-react-hooks",
   "license": "MIT",
@@ -34,8 +34,8 @@
     "typescript": "^4.4.3"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
   },
   "dependencies": {
     "streamlit-component-lib": "^1.2.0"
