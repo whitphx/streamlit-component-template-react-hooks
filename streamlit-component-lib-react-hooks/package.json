@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn check:eslint && yarn check:prettier",
     "fix:eslint": "eslint --fix 'src/**/*.{ts,tsx}'",
     "fix:prettier": "prettier --write .",
     "check:eslint": "eslint --fix 'src/**/*.{ts,tsx}'",
