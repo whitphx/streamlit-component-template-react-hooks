@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Streamlit, RenderData } from "streamlit-component-lib";
 
+/**
+ * Returns `RenderData` received from Streamlit.
+ */
 export const useStreamlit = (): RenderData | undefined => {
   const [renderData, setRenderData] = useState<RenderData>();
 
@@ -37,6 +40,10 @@ interface ErrorBoundaryProps {
 interface ErrorBoundaryState {
   error: Error | undefined;
 }
+
+/**
+ * Shows errors thrown from child components.
+ */
 export class ErrorBoundary extends React.PureComponent<
   ErrorBoundaryProps,
   ErrorBoundaryState

@@ -5,6 +5,7 @@ import MyComponent from "./MyComponent"
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* Using <ErrorBoundary /> is optional, but useful for showing errors */}
     <ErrorBoundary>
       <MyComponent />
     </ErrorBoundary>
