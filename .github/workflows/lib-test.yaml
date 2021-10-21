@@ -13,10 +13,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: streamlit-component-lib-react-hooks
-
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
@@ -28,11 +24,14 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
+        cache: 'yarn'
+    - run: yarn
     - name: Lint
+      working-directory: streamlit-component-lib-react-hooks
       run: |
         npm run check:eslint
         npm run check:prettier
     - run: npm run build --if-present
+      working-directory: streamlit-component-lib-react-hooks
     # - run: npm test
+    #   working-directory: streamlit-component-lib-react-hooks
