@@ -1,17 +1,13 @@
 import { Streamlit } from "streamlit-component-lib"
-import { useStreamlit } from "streamlit-component-lib-react-hooks"
+import { useRenderData } from "streamlit-component-lib-react-hooks"
 import React, { useState, useCallback } from "react"
 
 /**
  * This is a React-based component template with functional component and hooks.
  */
 const MyComponent: React.VFC = () => {
-  // "useStreamlit" is a hook that bootstraps the
-  // connection between your component and the Streamlit app, and handles
-  // passing arguments from Python -> Component.
-  //
-  // You don't need to edit useStreamlit (but you're welcome to!).
-  const renderData = useStreamlit()
+  // "useRenderData" returns the renderData passed from Python.
+  const renderData = useRenderData()
 
   const [numClicks, setNumClicks] = useState(0)
   const [isFocused, setIsFocused] = useState(false)
@@ -34,11 +30,6 @@ const MyComponent: React.VFC = () => {
   const onBlur = useCallback(() => {
     setIsFocused(false)
   }, [])
-
-  // Don't render until we've gotten our first data from Streamlit.
-  if (renderData == null) {
-    return null
-  }
 
   // Arguments that are passed to the plugin in Python are accessible
   // via `renderData.args`. Here, we access the "name" arg.
