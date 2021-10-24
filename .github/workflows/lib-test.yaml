@@ -3,10 +3,10 @@ name: Test streamlit-component-lib-react-hooks
 on:
   push:
     branches: [ main ]
-    paths-ignore: [ 'template/**' ]
+    paths: [ 'streamlit-component-lib-react-hooks/**' ]
   pull_request:
     branches: [ main ]
-    paths-ignore: [ 'template/**' ]
+    paths: [ 'streamlit-component-lib-react-hooks/**' ]
 
 jobs:
   tests:
