@@ -29,9 +29,9 @@ jobs:
     - name: Lint
       working-directory: streamlit-component-lib-react-hooks
       run: |
-        npm run check:eslint
-        npm run check:prettier
-    - run: npm run build --if-present
+        yarn run check:eslint
+        yarn run check:prettier
+    - run: yarn run build
       working-directory: streamlit-component-lib-react-hooks
     # - run: npm test
     #   working-directory: streamlit-component-lib-react-hooks
