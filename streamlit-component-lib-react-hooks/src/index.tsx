@@ -1,5 +1,5 @@
 export {
-  useStreamlit,
+  useRenderData,
   default as StreamlitProvider,
 } from "./StreamlitProvider";
-export { useRenderData } from "./useRenderData";
+export { useNullableRenderData } from "./useNullableRenderData";

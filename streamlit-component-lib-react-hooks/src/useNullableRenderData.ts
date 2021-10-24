@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { Streamlit, RenderData } from "streamlit-component-lib";
 
 /**
- * Returns `RenderData` received from Streamlit.
+ * Returns `RenderData` received from Streamlit after the first render event received.
  */
-export const useRenderData = (): RenderData | undefined => {
+export const useNullableRenderData = (): RenderData | undefined => {
   const [renderData, setRenderData] = useState<RenderData>();
 
   useEffect(() => {

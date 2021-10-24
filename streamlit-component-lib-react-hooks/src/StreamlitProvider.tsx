@@ -1,26 +1,36 @@
 import React, { useEffect, useContext } from "react";
 import { Streamlit, RenderData } from "streamlit-component-lib";
-import { useRenderData } from "./useRenderData";
+import { useNullableRenderData } from "./useNullableRenderData";
 import ErrorBoundary from "./ErrorBoundary";
 
 const renderDataContext = React.createContext<RenderData | undefined>(
   undefined
 );
 
-export const useStreamlit = (): RenderData => {
+/**
+ * Returns `RenderData` received from Streamlit.
+ */
+export const useRenderData = (): RenderData => {
   const contextValue = useContext(renderDataContext);
   if (contextValue == null) {
-    throw new Error("useStreamlit() must be used inside <StreamlitProvider />");
+    throw new Error(
+      "useRenderData() must be used inside <StreamlitProvider />"
+    );
   }
 
   return contextValue;
 };
 
+/**
+ * Wrapper for React-hooks-based Streamlit components.
+ *
+ * Bootstraps the communication interface between Streamlit and the component.
+ */
 interface StreamlitProviderProps {
   children: React.ReactNode;
 }
 const StreamlitProvider: React.VFC<StreamlitProviderProps> = (props) => {
-  const renderData = useRenderData();
+  const renderData = useNullableRenderData();
 
   useEffect(() => {
     Streamlit.setFrameHeight();
