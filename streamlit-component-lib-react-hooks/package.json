@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "watch": "tsc -w",
     "prepare": "yarn build",
     "prepublishOnly": "yarn check:eslint && yarn check:prettier",
     "fix:eslint": "eslint --fix 'src/**/*.{ts,tsx}'",
