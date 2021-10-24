@@ -1,6 +1,6 @@
 {
   "name": "streamlit_component_template",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -13,7 +13,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "streamlit-component-lib-react-hooks": "^0.2.0",
+    "streamlit-component-lib-react-hooks": "^0.2.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
