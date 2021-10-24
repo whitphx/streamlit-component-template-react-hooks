@@ -2,8 +2,8 @@
 
 [![Test streamlit-component-lib-react-hooks](https://github.com/whitphx/streamlit-component-template-react-hooks/actions/workflows/lib-test.yaml/badge.svg)](https://github.com/whitphx/streamlit-component-template-react-hooks/actions/workflows/lib-test.yaml)
 
-![version](https://img.shields.io/npm/v/streamlit-component-lib-react-hooks)
-![license](https://img.shields.io/npm/l/streamlit-component-lib-react-hooks)
+[![version](https://img.shields.io/npm/v/streamlit-component-lib-react-hooks)](https://www.npmjs.com/package/streamlit-component-lib-react-hooks)
+[![license](https://img.shields.io/npm/l/streamlit-component-lib-react-hooks)](https://www.npmjs.com/package/streamlit-component-lib-react-hooks)
 
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/whitphx?label=Sponsor%20me%20on%20GitHub%20Sponsors&style=social)](https://github.com/sponsors/whitphx)
 
