@@ -1,4 +1,5 @@
 import React from "react";
+import { Streamlit } from "streamlit-component-lib";
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
@@ -26,10 +27,12 @@ class ErrorBoundary extends React.PureComponent<
 
   render() {
     if (this.state.error != null) {
-      <div>
-        <h1>Component Error</h1>
-        <span>{this.state.error.message}</span>
-      </div>;
+      return (
+        <div>
+          <h1>Component Error</h1>
+          <span>{this.state.error.message}</span>
+        </div>
+      );
     }
 
     return this.props.children;
