@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.3.1] - 2021-11-18
+
 ### Fix
 
 - A bug that `<ErrorBoundary />` does not display the caught error.
