@@ -1,5 +1,4 @@
 import React from "react";
-import { Streamlit } from "streamlit-component-lib";
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
