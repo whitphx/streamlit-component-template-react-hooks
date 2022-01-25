@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.0.0] - 2022-01-26
+
+No change - just bump the version 1.0.0 as the API has been stabilized and the package is already used in some projects stably.
+
 ## [0.3.1] - 2021-11-18
 
 ### Fix
