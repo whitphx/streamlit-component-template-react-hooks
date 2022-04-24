@@ -19,7 +19,9 @@
     "fix:eslint": "eslint --fix 'src/**/*.{ts,tsx}'",
     "fix:prettier": "prettier --write .",
     "check:eslint": "eslint --fix 'src/**/*.{ts,tsx}'",
-    "check:prettier": "prettier --check ."
+    "check:prettier": "prettier --check .",
+    "lint-staged:eslint": "eslint --fix",
+    "lint-staged:prettier": "prettier --write"
   },
   "devDependencies": {
     "@types/react": "^17.0.21",
