@@ -6,6 +6,7 @@
   ],
   "name": "streamlit-component-template-react-hooks",
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.4.0"
   }
 }
