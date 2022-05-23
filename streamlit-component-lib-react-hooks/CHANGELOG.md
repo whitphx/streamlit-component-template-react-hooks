@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.0.2] - 2022-04-24
+
+### Fix
+
+- Include `CHANGELOG.md` in the NPM package, #53.
+
 ## [1.0.1] - 2022-04-24
 
 ### Fix
