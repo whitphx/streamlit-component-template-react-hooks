@@ -1,6 +1,9 @@
 {
   "name": "streamlit-component-lib-react-hooks",
   "version": "1.0.2",
+  "keywords": [
+    "streamlit"
+  ],
   "main": "dist/index.js",
   "repository": {
     "type": "git",
