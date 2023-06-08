@@ -2,36 +2,33 @@ name: Test streamlit-component-lib-react-hooks
 
 on:
   push:
-    branches: [ main ]
-    paths: [ 'streamlit-component-lib-react-hooks/**' ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
-    paths: [ 'streamlit-component-lib-react-hooks/**' ]
+    branches: [main]
 
 jobs:
   tests:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [14.x, 16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'yarn'
-    - run: yarn
-    - name: Lint
-      working-directory: streamlit-component-lib-react-hooks
-      run: |
-        yarn run check:eslint
-        yarn run check:prettier
-    - run: yarn run build
-      working-directory: streamlit-component-lib-react-hooks
-    # - run: npm test
-    #   working-directory: streamlit-component-lib-react-hooks
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "yarn"
+      - run: yarn
+      - name: Lint
+        working-directory: streamlit-component-lib-react-hooks
+        run: |
+          yarn run check:eslint
+          yarn run check:prettier
+      - run: yarn run build
+        working-directory: streamlit-component-lib-react-hooks
+      # - run: npm test
+      #   working-directory: streamlit-component-lib-react-hooks
