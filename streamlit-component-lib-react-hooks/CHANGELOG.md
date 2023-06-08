@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- Remove `bootstrap.min.css`, #106.
+
 ## [1.0.2] - 2022-04-24
 
 ### Fix
