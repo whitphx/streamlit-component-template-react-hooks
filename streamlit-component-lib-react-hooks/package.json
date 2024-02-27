@@ -48,6 +48,6 @@
     "react-dom": ">=16.8"
   },
   "dependencies": {
-    "streamlit-component-lib": "^1.2.0"
+    "streamlit-component-lib": "^2.0.0"
   }
 }
