@@ -4,11 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [1.2.2] - 2024-02-27
+## [1.2.3] - 2024-02-27
 
 ### Fixed
 
 - Improve the CI/CD workflow, #114.
+
+## [1.2.2]
+
+Skipped.
 
 ## [1.2.1] - 2024-02-27
 
