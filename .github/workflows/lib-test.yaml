@@ -28,7 +28,11 @@ jobs:
         run: |
           yarn run check:eslint
           yarn run check:prettier
-      - run: yarn run build
-        working-directory: streamlit-component-lib-react-hooks
       # - run: npm test
       #   working-directory: streamlit-component-lib-react-hooks
+      - name: Build lib
+        run: yarn run build
+        working-directory: streamlit-component-lib-react-hooks
+      - name: Build template
+        run: yarn run build
+        working-directory: template/my_component/frontend
