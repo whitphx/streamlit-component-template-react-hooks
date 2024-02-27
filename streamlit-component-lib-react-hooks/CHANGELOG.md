@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.2.0] - 2024-02-27
+
+### Changed
+
+- Remove Node 14 and 16 from the CI/CD, #111.
+- Update `react-scripts` to `5.0.1` and `streamlit-component-lib` to `^2.0.0`, #112.
+
 ## [1.1.0] - 2023-06-08
 
 ### Changed
