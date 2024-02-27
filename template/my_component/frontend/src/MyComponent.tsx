@@ -5,7 +5,7 @@ import React, { useState, useCallback } from "react"
 /**
  * This is a React-based component template with functional component and hooks.
  */
-const MyComponent: React.VFC = () => {
+function MyComponent() {
   // "useRenderData" returns the renderData passed from Python.
   const renderData = useRenderData()
 
