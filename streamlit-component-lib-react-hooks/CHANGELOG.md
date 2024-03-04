@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.2.7] - 2024-03-04
+
+Republished the same package.
+
+## [1.2.6] - 2024-03-03
+
+Republished the same package.
+
+## [1.2.5] - 2024-03-03
+
+**Accidentally the versions `<=1.2.4` of this package have been unpublished and cannot be restored. The same package is now published as `@streamlit/component-lib-react-hooks` starting from version `1.2.5`.**
+
 ## [1.2.4] - 2024-02-27
 
 ### Fixed
