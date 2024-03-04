@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.2.8] - 2024-03-04
+
+Republished the same package.
+
 ## [1.2.7] - 2024-03-04
 
 Republished the same package.
