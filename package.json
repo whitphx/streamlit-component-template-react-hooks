@@ -10,5 +10,9 @@
     "@lerna-lite/version": "^3.4.0",
     "lint-staged": "^15.4.2",
     "husky": "^9.1.7"
+  },
+  "scripts": {
+    "new-version": "lerna version --force-publish",
+    "prepare": "husky"
   }
 }
