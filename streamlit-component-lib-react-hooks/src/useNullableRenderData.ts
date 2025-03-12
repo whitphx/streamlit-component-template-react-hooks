@@ -21,7 +21,7 @@ export const useNullableRenderData = (): RenderData | undefined => {
     const cleanup = () => {
       Streamlit.events.removeEventListener(
         Streamlit.RENDER_EVENT,
-        onRenderEvent
+        onRenderEvent,
       );
     };
     return cleanup;
