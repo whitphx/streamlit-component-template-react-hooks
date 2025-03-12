@@ -20,7 +20,7 @@ This repo contains below.
 
 ## Quickstart for the component template
 
-* Ensure you have [Python 3.6+](https://www.python.org/downloads/), [Node.js](https://nodejs.org), and [yarn](https://yarnpkg.com/getting-started/install) (or [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)) installed.
+* Ensure you have [Python 3.6+](https://www.python.org/downloads/) and [Node.js](https://nodejs.org) installed.
 * Clone this repo.
 * Create a new Python virtual environment for the template:
 ```
