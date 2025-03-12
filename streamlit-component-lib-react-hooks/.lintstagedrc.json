@@ -1,4 +1,4 @@
 {
-  "*.{js,jsx,ts,tsx}": "yarn workspace streamlit-component-lib-react-hooks run lint-staged:eslint",
-  "*": "yarn workspace streamlit-component-lib-react-hooks run lint-staged:prettier"
+  "*.{js,jsx,ts,tsx}": "eslint --fix",
+  "*": "prettier --write"
 }

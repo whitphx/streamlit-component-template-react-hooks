@@ -1,0 +1,3 @@
+packages:
+- "streamlit-component-lib-react-hooks"
+- "template/my_component/frontend"
