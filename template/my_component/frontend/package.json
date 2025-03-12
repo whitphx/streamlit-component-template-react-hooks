@@ -2,6 +2,7 @@
   "name": "streamlit_component_template",
   "version": "1.2.8",
   "private": true,
+  "type": "module",
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
