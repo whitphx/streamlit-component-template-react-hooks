@@ -1,5 +1,8 @@
 {
   "private": true,
+  "engines": {
+    "node": ">=20.5.0"
+  },
   "workspaces": [
     "streamlit-component-lib-react-hooks",
     "template/my_component/frontend"
@@ -14,5 +17,6 @@
   "scripts": {
     "new-version": "lerna version --force-publish",
     "prepare": "husky"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
