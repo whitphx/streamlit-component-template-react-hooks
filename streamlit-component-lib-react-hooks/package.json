@@ -4,6 +4,7 @@
   "keywords": [
     "streamlit"
   ],
+  "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/cjs/index.d.ts",
@@ -28,7 +29,6 @@
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:package-json": "mkdir -p dist/cjs dist/esm && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && echo '{\"type\":\"module\"}' > dist/esm/package.json",
-    "watch": "tsc -w -p tsconfig.cjs.json",
     "fix:eslint": "eslint --fix 'src/**/*.{ts,tsx}'",
     "fix:prettier": "prettier --write .",
     "check:eslint": "eslint --fix 'src/**/*.{ts,tsx}'",
@@ -37,25 +37,24 @@
     "lint-staged:prettier": "prettier --write"
   },
   "devDependencies": {
-    "@types/react": "^17.0.21",
-    "@types/react-dom": "^17.0.9",
+    "@eslint/js": "^9.22.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.25.3",
-    "prettier": "2.6.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "typescript": "^4.4.3"
+    "eslint": "^9.22.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "prettier": "^3.5.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8"
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
     "streamlit-component-lib": "^2.0.0"
