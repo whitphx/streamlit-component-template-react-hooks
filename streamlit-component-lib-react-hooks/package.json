@@ -4,7 +4,16 @@
   "keywords": [
     "streamlit"
   ],
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/cjs/index.d.ts"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/whitphx/streamlit-component-template-react-hooks",
@@ -15,8 +24,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:package-json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:package-json": "mkdir -p dist/cjs dist/esm && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && echo '{\"type\":\"module\"}' > dist/esm/package.json",
+    "watch": "tsc -w -p tsconfig.cjs.json",
     "fix:eslint": "eslint --fix 'src/**/*.{ts,tsx}'",
     "fix:prettier": "prettier --write .",
     "check:eslint": "eslint --fix 'src/**/*.{ts,tsx}'",

@@ -1,0 +1,13 @@
+{
+  "include": ["src"],
+  "compilerOptions": {
+    "target": "es5",
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
