@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.0] - 2025-03-13
+
+[BREAKING]: Drop support for Node.js 18.
+[BREAKING]: Remove React 16. Now only React 17 and 18 are supported.
+[BREAKING]: `streamlit-component-lib-react-hooks` is now bundled as a dual package (CJS and ESM).
+
 ## [1.2.8] - 2024-03-04
 
 Republished the same package.
