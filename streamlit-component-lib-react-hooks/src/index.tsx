@@ -1,5 +1,7 @@
+/* eslint-disable react-refresh/only-export-components */
 export {
   useRenderData,
-  default as StreamlitProvider,
+  StreamlitProvider,
+  StreamlitProviderProps,
 } from "./StreamlitProvider";
 export { useNullableRenderData } from "./useNullableRenderData";
