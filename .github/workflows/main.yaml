@@ -58,14 +58,14 @@ jobs:
       uses: actions/upload-artifact@v4
       if: ${{ matrix.node-version == '22' && ! startsWith(github.ref, 'refs/tags/v') }}
       with:
-        path: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-v*.tgz
+        path: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-*.tgz
         name: streamlit-component-lib-react-hooks-${{ github.sha }}.tgz
 
     - name: Upload the built tar ball as an artifact (when pushed with a version tag)
       uses: actions/upload-artifact@v4
       if: ${{ matrix.node-version == '22' && startsWith(github.ref, 'refs/tags/v') }}
       with:
-        path: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-v*.tgz
+        path: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-*.tgz
         name: streamlit-component-lib-react-hooks-${{ github.ref_name }}.tgz
 
   publish:
