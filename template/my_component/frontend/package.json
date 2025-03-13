@@ -1,12 +1,12 @@
 {
   "name": "streamlit_component_template",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "private": true,
   "type": "module",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "streamlit-component-lib-react-hooks": "^2.0.6"
+    "streamlit-component-lib-react-hooks": "^2.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
