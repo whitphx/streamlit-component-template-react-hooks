@@ -13,7 +13,6 @@
   },
   "scripts": {
     "new-version": "lerna version --force-publish",
-    "version": "pnpm install",
     "prepare": "husky"
   }
 }
