@@ -12,7 +12,7 @@
     "prettier": "^3.5.3"
   },
   "scripts": {
-    "new-version": "lerna version",
+    "new-version": "lerna version --force-publish",
     "version": "pnpm install",
     "prepare": "husky"
   }
