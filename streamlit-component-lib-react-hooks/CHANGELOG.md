@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.0.1] - 2025-03-14
+
+### Fixed
+
+- Dependencies updates.
+
 ## [2.0.0] - 2025-03-13
 
 [BREAKING]: Drop support for Node.js 18.
