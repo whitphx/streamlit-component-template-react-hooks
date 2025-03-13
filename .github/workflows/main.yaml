@@ -3,7 +3,7 @@ name: Build, Test, and Publish
 on:
   push:
     branches: [main]
-    tags: ['v*']
+    tags: ["v*"]
   pull_request:
     branches: [main]
 
@@ -17,94 +17,94 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
-    - uses: pnpm/action-setup@v4
-      with:
-        version: latest
-        run_install: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: false
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: "pnpm"
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
 
-    - name: Install dependencies
-      run: pnpm install
+      - name: Install dependencies
+        run: pnpm install
 
-    - name: Lint
-      working-directory: streamlit-component-lib-react-hooks
-      run: |
-        pnpm run check:eslint
-        pnpm run check:prettier
-    # - run: pnpm test
-    #   working-directory: streamlit-component-lib-react-hooks
-    - name: Build lib
-      run: pnpm run build
-      working-directory: streamlit-component-lib-react-hooks
+      - name: Lint
+        working-directory: streamlit-component-lib-react-hooks
+        run: |
+          pnpm run check:eslint
+          pnpm run check:prettier
+      # - run: pnpm test
+      #   working-directory: streamlit-component-lib-react-hooks
+      - name: Build lib
+        run: pnpm run build
+        working-directory: streamlit-component-lib-react-hooks
 
-    - name: Test building the template
-      run: pnpm run build
-      working-directory: template/my_component/frontend
+      - name: Test building the template
+        run: pnpm run build
+        working-directory: template/my_component/frontend
 
-    - name: Package lib
-      working-directory: streamlit-component-lib-react-hooks
-      run: pnpm pack
+      - name: Package lib
+        working-directory: streamlit-component-lib-react-hooks
+        run: pnpm pack
 
-    - name: Upload the built tar ball as an artifact
-      uses: actions/upload-artifact@v4
-      if: ${{ matrix.node-version == '22' && ! startsWith(github.ref, 'refs/tags/v') }}
-      with:
-        path: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-*.tgz
-        name: streamlit-component-lib-react-hooks-${{ github.sha }}.tgz
+      - name: Upload the built tar ball as an artifact
+        uses: actions/upload-artifact@v4
+        if: ${{ matrix.node-version == '22' && ! startsWith(github.ref, 'refs/tags/v') }}
+        with:
+          path: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-*.tgz
+          name: streamlit-component-lib-react-hooks-${{ github.sha }}.tgz
 
-    - name: Upload the built tar ball as an artifact (when pushed with a version tag)
-      uses: actions/upload-artifact@v4
-      if: ${{ matrix.node-version == '22' && startsWith(github.ref, 'refs/tags/v') }}
-      with:
-        path: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-*.tgz
-        name: streamlit-component-lib-react-hooks-${{ github.ref_name }}.tgz
+      - name: Upload the built tar ball as an artifact (when pushed with a version tag)
+        uses: actions/upload-artifact@v4
+        if: ${{ matrix.node-version == '22' && startsWith(github.ref, 'refs/tags/v') }}
+        with:
+          path: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-*.tgz
+          name: streamlit-component-lib-react-hooks-${{ github.ref_name }}.tgz
 
   publish:
-    if: ${{ !failure() && startsWith(github.ref, 'refs/tags/v') }}  # `!failure()` is necessary to avoid skipping this job after successful build: https://github.com/actions/runner/issues/491
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
     needs: [test-build]
 
     permissions:
-      contents: write  # Necessary for creating releases: https://github.com/softprops/action-gh-release#permissions
+      contents: write # Necessary for creating releases: https://github.com/softprops/action-gh-release#permissions
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
-    - uses: pnpm/action-setup@v4
-      with:
-        version: latest
-        run_install: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: false
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: "pnpm"
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
 
-    - uses: actions/download-artifact@v4
-      with:
-        name: streamlit-component-lib-react-hooks-${{ github.ref_name }}.tgz
-        path: streamlit-component-lib-react-hooks
+      - uses: actions/download-artifact@v4
+        with:
+          name: streamlit-component-lib-react-hooks-${{ github.ref_name }}.tgz
+          path: streamlit-component-lib-react-hooks
 
-    - run: pnpm publish streamlit-component-lib-react-hooks-v*.tgz --access public
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-      working-directory: streamlit-component-lib-react-hooks
+      - run: pnpm publish streamlit-component-lib-react-hooks-v*.tgz --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+        working-directory: streamlit-component-lib-react-hooks
 
-    - name: Create a new release
-      uses: softprops/action-gh-release@v2
-      with:
-        files: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-v*.tgz
-        generate_release_notes: true
+      - name: Create a new release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-v*.tgz
+          generate_release_notes: true
