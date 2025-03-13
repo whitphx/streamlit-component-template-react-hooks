@@ -18,40 +18,52 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+
+    - uses: pnpm/action-setup@v4
+      with:
+        version: latest
+        run_install: false
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: "yarn"
-    - run: yarn
+        cache: "pnpm"
+
+    - name: Install dependencies
+      run: pnpm install
+
     - name: Lint
       working-directory: streamlit-component-lib-react-hooks
       run: |
-        yarn run check:eslint
-        yarn run check:prettier
-    # - run: npm test
+        pnpm run check:eslint
+        pnpm run check:prettier
+    # - run: pnpm test
     #   working-directory: streamlit-component-lib-react-hooks
     - name: Build lib
-      run: yarn run build
+      run: pnpm run build
       working-directory: streamlit-component-lib-react-hooks
+
     - name: Test building the template
-      run: yarn run build
+      run: pnpm run build
       working-directory: template/my_component/frontend
 
     - name: Package lib
       working-directory: streamlit-component-lib-react-hooks
-      run: yarn pack
+      run: pnpm pack
 
     - name: Upload the built tar ball as an artifact
       uses: actions/upload-artifact@v4
-      if: ${{ matrix.node-version == '20' && ! startsWith(github.ref, 'refs/tags/v') }}
+      if: ${{ matrix.node-version == '22' && ! startsWith(github.ref, 'refs/tags/v') }}
       with:
         path: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-v*.tgz
         name: streamlit-component-lib-react-hooks-${{ github.sha }}.tgz
 
     - name: Upload the built tar ball as an artifact (when pushed with a version tag)
       uses: actions/upload-artifact@v4
-      if: ${{ matrix.node-version == '20' && startsWith(github.ref, 'refs/tags/v') }}
+      if: ${{ matrix.node-version == '22' && startsWith(github.ref, 'refs/tags/v') }}
       with:
         path: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-v*.tgz
         name: streamlit-component-lib-react-hooks-${{ github.ref_name }}.tgz
@@ -67,18 +79,26 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
       with:
-        node-version: 22
-        cache: "yarn"
-        registry-url: https://registry.npmjs.org/
+        persist-credentials: false
+
+    - uses: pnpm/action-setup@v4
+      with:
+        version: latest
+        run_install: false
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: "pnpm"
 
     - uses: actions/download-artifact@v4
       with:
         name: streamlit-component-lib-react-hooks-${{ github.ref_name }}.tgz
         path: streamlit-component-lib-react-hooks
 
-    - run: yarn publish streamlit-component-lib-react-hooks-v*.tgz --access public
+    - run: pnpm publish streamlit-component-lib-react-hooks-v*.tgz --access public
       env:
         NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       working-directory: streamlit-component-lib-react-hooks
