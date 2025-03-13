@@ -12,7 +12,7 @@
     "prettier": "^3.5.3"
   },
   "scripts": {
-    "new-version": "lerna version --force-publish",
+    "new-version": "lerna version --sync-workspace-lock --force-publish",
     "prepare": "husky"
   }
 }
