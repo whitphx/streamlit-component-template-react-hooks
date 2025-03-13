@@ -12,7 +12,7 @@ import { renderDataContext } from "./useRenderData";
 export interface StreamlitProviderProps {
   children: React.ReactNode;
 }
-export const StreamlitProvider: React.VFC<StreamlitProviderProps> = (props) => {
+export function StreamlitProvider(props: StreamlitProviderProps) {
   const renderData = useNullableRenderData();
 
   useEffect(() => {
@@ -31,4 +31,4 @@ export const StreamlitProvider: React.VFC<StreamlitProviderProps> = (props) => {
       </renderDataContext.Provider>
     </ErrorBoundary>
   );
-};
+}

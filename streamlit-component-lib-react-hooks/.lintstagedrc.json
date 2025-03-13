@@ -1,4 +1,4 @@
 {
-  "*.{js,jsx,ts,tsx}": "eslint --fix",
-  "*": "prettier --write"
+  "*.{js,jsx,ts,tsx}": "pnpm --filter streamlit-component-lib-react-hooks lint-staged:eslint",
+  "*": "pnpm --filter streamlit-component-lib-react-hooks lint-staged:prettier"
 }
