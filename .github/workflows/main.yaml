@@ -98,11 +98,14 @@ jobs:
           name: streamlit-component-lib-react-hooks-${{ github.ref_name }}.tgz
           path: streamlit-component-lib-react-hooks
 
+      - name: Set publishing config
+        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+
       # `--no-git-checks` is required for publishing a package from a workflow triggered by a tag.
       # See https://github.com/pnpm/pnpm/issues/5894
       - run: pnpm publish streamlit-component-lib-react-hooks-*.tgz --no-git-checks --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
         working-directory: streamlit-component-lib-react-hooks
 
       - name: Create a new release
