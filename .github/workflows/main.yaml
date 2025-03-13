@@ -100,7 +100,7 @@ jobs:
 
       # `--no-git-checks` is required for publishing a package from a workflow triggered by a tag.
       # See https://github.com/pnpm/pnpm/issues/5894
-      - run: pnpm publish streamlit-component-lib-react-hooks-v*.tgz --no-git-checks --access public
+      - run: pnpm publish streamlit-component-lib-react-hooks-*.tgz --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
         working-directory: streamlit-component-lib-react-hooks
@@ -108,5 +108,5 @@ jobs:
       - name: Create a new release
         uses: softprops/action-gh-release@v2
         with:
-          files: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-v*.tgz
+          files: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-*.tgz
           generate_release_notes: true
