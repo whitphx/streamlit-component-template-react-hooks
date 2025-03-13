@@ -4,25 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.6] - 2025-03-14
+## [2.0.10] - 2025-03-14
 
 ### Fixed
 
 - Switch to `pnpm` from `yarn`.
 
-## [2.0.5]
-
-Skipped.
-
-## [2.0.4]
-
-Skipped.
-
-## [2.0.3]
-
-Skipped.
-
-## [2.0.2]
+## [2.0.2 - 2.0.9]
 
 Skipped.
 
