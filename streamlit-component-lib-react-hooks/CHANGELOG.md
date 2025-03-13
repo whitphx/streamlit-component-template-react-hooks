@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## [2.0.10] - 2025-03-14
+## [2.1.0] - 2025-03-13
+
+### Changed
+
+- Support React 19.
+
+## [2.0.10] - 2025-03-13
 
 ### Fixed
 
@@ -14,7 +20,7 @@ All notable changes to this project will be documented in this file.
 
 Skipped.
 
-## [2.0.1] - 2025-03-14
+## [2.0.1] - 2025-03-13
 
 ### Fixed
 
