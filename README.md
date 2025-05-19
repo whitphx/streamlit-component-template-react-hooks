@@ -33,7 +33,7 @@ $ pip install streamlit # install streamlit
 ```
 $ cd template/my_component/frontend
 $ yarn        # Install npm dependencies. `npm install` can be used instead.
-$ yarn start  # Start the Webpack dev server. `npm run start` can be used intead.
+$ yarn dev  # Start the Vite dev server. `npm run dev` can be used instead.
 ```
 * From a separate terminal, run the template's Streamlit app:
 ```
