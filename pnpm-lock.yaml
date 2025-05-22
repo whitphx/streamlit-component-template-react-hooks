@@ -25,10 +25,6 @@ importers:
         version: 3.5.3
 
   streamlit-component-lib-react-hooks:
-    dependencies:
-      streamlit-component-lib:
-        specifier: ^2.0.0
-        version: 2.0.0
     devDependencies:
       '@eslint/js':
         specifier: ^9.22.0
@@ -60,6 +56,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      streamlit-component-lib:
+        specifier: ^2.0.0
+        version: 2.0.0
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
@@ -75,6 +74,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      streamlit-component-lib:
+        specifier: ^2.0.0
+        version: 2.0.0
       streamlit-component-lib-react-hooks:
         specifier: workspace:*
         version: link:../../../streamlit-component-lib-react-hooks
