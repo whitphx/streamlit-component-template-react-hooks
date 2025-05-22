@@ -75,9 +75,12 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      streamlit-component-lib:
+        specifier: ^2.0.0
+        version: 2.0.0
       streamlit-component-lib-react-hooks:
         specifier: ^2.1.0
-        version: link:../../../streamlit-component-lib-react-hooks
+        version: 2.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
     devDependencies:
       '@eslint/js':
         specifier: ^9.22.0
@@ -2562,6 +2565,12 @@ packages:
   ssri@10.0.4:
     resolution: {integrity: sha512-12+IR2CB2C28MMAw0Ncqwj5QbTcs0nGIhgJzYWzDkb21vWmfNI83KS4f3Ci6GI98WreIfG7o9UXp3C0qbpA8nQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+
+  streamlit-component-lib-react-hooks@2.1.0:
+    resolution: {integrity: sha512-hf/zlbPnBnpSxslHOeaJqlo6iLCTx1PCroOAXYyavkaR4QmNPMAJ/iG9yXBCFh9COsd1uwJKhYP3un7L8AcWtQ==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
 
   streamlit-component-lib@2.0.0:
     resolution: {integrity: sha512-ekLjskU4Cz+zSLkTC9jpppv2hb8jlA3z2h+TtwGUGuwMKrGLrvTpzLJI1ibPuI+bZ60mLHVI1GP/OyNb7K7UjA==}
@@ -5626,6 +5635,12 @@ snapshots:
   ssri@10.0.4:
     dependencies:
       minipass: 5.0.0
+
+  streamlit-component-lib-react-hooks@2.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+      streamlit-component-lib: 2.0.0
 
   streamlit-component-lib@2.0.0:
     dependencies:
