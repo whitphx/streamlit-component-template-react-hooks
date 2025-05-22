@@ -5,8 +5,8 @@
   },
   "name": "streamlit-component-template-react-hooks",
   "devDependencies": {
-    "@lerna-lite/cli": "^3.4.0",
-    "@lerna-lite/version": "^3.4.0",
+    "@lerna-lite/cli": "^4.1.2",
+    "@lerna-lite/version": "^4.1.2",
     "lint-staged": "^15.4.2",
     "husky": "^9.1.7",
     "prettier": "^3.5.3"
