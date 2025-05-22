@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.1.1] - 2025-05-22
+
+### Fixed
+
+- Fix `README.md` and `template/MANIFEST.in`, contributed by [@F-loat](https://github.com/F-loat).
+
 ## [2.1.0] - 2025-03-13
 
 ### Changed
