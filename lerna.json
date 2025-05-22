@@ -3,6 +3,6 @@
     "streamlit-component-lib-react-hooks",
     "template/my_component/frontend"
   ],
-  "version": "2.1.0",
+  "version": "2.1.1",
   "npmClient": "pnpm"
 }
