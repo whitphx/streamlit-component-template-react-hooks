@@ -14,7 +14,7 @@
 This repo contains below.
 
 - A template for creating Streamlit Components with React Hooks and functional component style: [`./template`](./template).
-  - This is based on [the official React template](https://github.com/streamlit/component-template/tree/master/template). The original code has been copied to this repo and fixed to use React Hooks.
+  - This was originally based on [the official React template](https://github.com/streamlit/component-template/tree/master/template) but has been modified to use the functional component style with hooks and modern JavaScript stack such as Vite instead of deprecated Create React App.
 - The source code of `streamlit-component-lib-react-hooks` npm package, which provides React-Hooks style API for Streamlit Component: [`./streamlit-component-lib-react-hooks`](streamlit-component-lib-react-hooks).
   - This is only for development purpose and the users of `./template` do not have to see it.
 
