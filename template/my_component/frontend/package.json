@@ -7,7 +7,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "streamlit-component-lib": "^2.0.0",
-    "streamlit-component-lib-react-hooks": "workspace:*"
+    "streamlit-component-lib-react-hooks": "^2.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
