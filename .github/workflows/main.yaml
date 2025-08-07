@@ -93,7 +93,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: streamlit-component-lib-react-hooks-${{ github.ref_name }}.tgz
           path: streamlit-component-lib-react-hooks
