@@ -109,7 +109,7 @@ jobs:
         working-directory: streamlit-component-lib-react-hooks
 
       - name: Create a new release
-        uses: softprops/action-gh-release@6cbd405e2c4e67a21c47fa9e383d020e4e28b836 # v2.3.3
+        uses: softprops/action-gh-release@6da8fa9354ddfdc4aeace5fc48d7f679b5214090 # v2.4.1
         with:
           files: streamlit-component-lib-react-hooks/streamlit-component-lib-react-hooks-*.tgz
           generate_release_notes: true
